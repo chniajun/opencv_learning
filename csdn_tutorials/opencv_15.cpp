@@ -16,9 +16,10 @@ int main()
 {
     Mat src = imread("25.png");
     imshow("【原始图】", src);
-    Rect ccomp;
-    floodFill(src, Point(50, 300), Scalar(155, 255, 55), &ccomp, Scalar(20, 20, 20), Scalar(20, 20, 20));
-    imshow("【效果图】", src);
+    Rect ccomp;   
+           // 原图  种子点           颜色值            重绘区域的最小边界矩形区域   
+    floodFill(src, Point(50, 300), Scalar(155, 255, 55), &ccomp, Scalar(10, 10, 10), Scalar(10, 10, 10));
+    imshow("【效果图】", src); //  表示当前观察像素值与其部件邻域像素值或者待加入该部件的种子像素之间的亮度或颜色之负差（lower brightness/color difference）的最大值。    正差
     waitKey(0);
     return 0;
 }
